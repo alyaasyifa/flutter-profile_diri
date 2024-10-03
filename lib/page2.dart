@@ -5,6 +5,9 @@ class page2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Profile"),
+      ),
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
@@ -86,15 +89,20 @@ class page2 extends StatelessWidget {
                       children: <Widget>[
                         Container(
                           width: double.infinity,
-                          color: const Color.fromARGB(200, 206, 226, 245),
-                          padding: const EdgeInsets.all(
-                              15.0), // Menambahkan padding di sekitar teks
+                          padding: const EdgeInsets.all(15.0), // Menambahkan padding di sekitar teks
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(200, 206, 226, 245),
+                            borderRadius: BorderRadius.circular(10), // Menambahkan border radius
+                          ),
                           child: const Text(
                             "Skill",
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
+
                         Container(
                           padding: const EdgeInsets.all(15.0),
                           child: const Column(

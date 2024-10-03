@@ -1,72 +1,124 @@
 import 'package:flutter/material.dart';
-import 'package:profile_diri/page2.dart';
+import 'package:profile_diri/dashboard.dart';
 
-void main() => runApp(
-  const MaterialApp(
-  debugShowCheckedModeBanner: false,
-  home: Home(),
-));
+void main() {
+  runApp(const MyApp());
+}
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/background3.jpeg"),
-            fit: BoxFit.cover,
-          ),
-        ),
-
-
-        child: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.shortestSide,
-              padding: const EdgeInsets.all(20.0),
-              alignment: Alignment.center,
-              child: Card(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0),),
-                color: const Color.fromARGB(200, 206, 226, 245),
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-
-                      const CircleAvatar(
-                        radius: 100.0,
-                        backgroundImage: 
-                        AssetImage('assets/pan.jpg'),
-                      ),
-                      const Text("Alya Nursyifa",
-                      textAlign:TextAlign.center,
-                      style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold)
-                      ),
-
-                      const Text("Vocational High School Student at SMK Wikrama Bogor",
-                      textAlign:TextAlign.center,
-                      style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 87, 117, 148))
-                      ),
-
-                      TextButton(onPressed:(){
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const page2()),
-                          );
-                      }, child:const Text('See More')
-                      ),
-                    ],
-                  ),
+      appBar: AppBar(
+        title: const Text("Login Form"),
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(50), // Padding untuk keseluruhan form
+          child: Container(
+            width: 800, // Lebar card agar lebih persegi panjang
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10.0),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 10.0,
+                  offset: Offset(0, 5),
                 ),
+              ],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0), // Padding di dalam container
+              child: Column(
+                mainAxisSize: MainAxisSize.min, // Mengatur ukuran column agar sesuai dengan kontennya
+                children: <Widget>[
+                  const Align(
+                    alignment: Alignment.centerLeft, // Menyusun teks di sebelah kiri
+                    child: Text(
+                      "Login",
+                      style: TextStyle(
+                        color: Colors.blue, // Mengatur warna teks menjadi biru
+                        fontWeight: FontWeight.bold, // Mengatur gaya teks menjadi tebal
+                        fontSize: 24, // Mengatur ukuran font (opsional)
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Email",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                        borderSide: const BorderSide(color: Colors.blue),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                        borderSide: const BorderSide(color: Colors.blue, width: 2.0),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 12), // Jarak antara field
+                  TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Password",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                        borderSide: const BorderSide(color: Colors.blue),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                        borderSide: const BorderSide(color: Colors.blue, width: 2.0),
+                      ),
+                    ),
+                    obscureText: true, // Menyembunyikan teks password
+                  ),
+                  const SizedBox(height: 16), // Jarak antara field dan tombol
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue, // Mengatur warna latar belakang tombol menjadi biru
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Home(), // Pastikan nama kelas sesuai
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      "Login",
+                      style: TextStyle(
+                        color: Colors.white, // Mengatur warna teks menjadi putih
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            )
-          ],
+            ),
+          ),
         ),
       ),
     );
