@@ -10,7 +10,7 @@ class page2 extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/background.jpeg"),
+            image: AssetImage("assets/background3.jpeg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -22,16 +22,16 @@ class page2 extends StatelessWidget {
                 const SizedBox(height: 10),
                 const CircleAvatar(
                   radius: 100.0,
-                  backgroundImage: AssetImage('assets/profile.jpeg'),
+                  backgroundImage: AssetImage('assets/al.png'),
                 ),
                 const SizedBox(height: 10),
                 const Text(
                   "Alya Nursyifa",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 20, color: Colors.black),
+                  style: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
                 ),
                 const Card(
-                  color: Color.fromRGBO(248, 234, 198, 1),
+                  color: Color.fromARGB(200, 206, 226, 245),
                   margin: EdgeInsets.all(20),
                   child: Padding(
                     padding: EdgeInsets.all(15.0),
@@ -75,7 +75,6 @@ class page2 extends StatelessWidget {
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width * 10,
-                  height: MediaQuery.of(context).size.height * 0.4,
                   child: Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -87,7 +86,7 @@ class page2 extends StatelessWidget {
                       children: <Widget>[
                         Container(
                           width: double.infinity,
-                          color: const Color.fromRGBO(248, 234, 198, 1),
+                          color: const Color.fromARGB(200, 206, 226, 245),
                           padding: const EdgeInsets.all(
                               15.0), // Menambahkan padding di sekitar teks
                           child: const Text(

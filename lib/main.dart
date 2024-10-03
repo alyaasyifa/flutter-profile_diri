@@ -17,7 +17,7 @@ class Home extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/background.jpeg"),
+            image: AssetImage("assets/background3.jpeg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -33,7 +33,7 @@ class Home extends StatelessWidget {
               alignment: Alignment.center,
               child: Card(
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0),),
-                color: const Color.fromRGBO(248, 234, 198, 1),
+                color: const Color.fromARGB(200, 206, 226, 245),
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -42,16 +42,16 @@ class Home extends StatelessWidget {
                       const CircleAvatar(
                         radius: 100.0,
                         backgroundImage: 
-                        AssetImage('assets/profile.jpeg'),
+                        AssetImage('assets/pan.jpg'),
                       ),
                       const Text("Alya Nursyifa",
                       textAlign:TextAlign.center,
-                      style: TextStyle(fontSize: 18, color: Colors.black)
+                      style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold)
                       ),
 
                       const Text("Vocational High School Student at SMK Wikrama Bogor",
                       textAlign:TextAlign.center,
-                      style: TextStyle(fontSize: 16, color: Color(0xF9916B0D))
+                      style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 87, 117, 148))
                       ),
 
                       TextButton(onPressed:(){
