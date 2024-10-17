@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:profile_diri/page2.dart';
 
-void main() => runApp(
-  const MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: Home(),
-  ),
-);
-
 class Home extends StatelessWidget {
-  const Home({super.key});
+  const Home({
+    super.key,
+    required this.name,
+    required this.role,
+    required this.school,
+    required this.deskripsi,
+  });
+
+  final String name;
+  final String role;
+  final String school;
+  final String deskripsi;
 
   @override
   Widget build(BuildContext context) {
@@ -45,20 +49,37 @@ class Home extends StatelessWidget {
                         backgroundImage: AssetImage('assets/pan.jpg'),
                       ),
                       const SizedBox(height: 10),
-                      const Text(
-                        "Alya Nursyifa",
+                      Text(
+                        name,
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 18,
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 10),
-                      const Text(
-                        "Vocational High School Student at SMK Wikrama Bogor",
+                      
+                      Text(
+                        role,
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: const TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
+                      ),
+                 
+                      Text(
+                        school,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
+                      ),
+                      Text(
+                        deskripsi,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
                           fontSize: 16,
                           color: Color.fromARGB(255, 87, 117, 148),
                         ),
@@ -73,14 +94,12 @@ class Home extends StatelessWidget {
                         },
                         child: const Text('See More'),
                       ),
-                      
                       const Text(
                         "or",
                         style: TextStyle(
                           color: Color.fromARGB(255, 87, 117, 148),
                         ),
                       ),
-                    
                       TextButton(
                         onPressed: () {
                           Navigator.pop(context);
